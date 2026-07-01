@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Make-up Artist by Asma - Gutschein</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:
+linear-gradient(
+135deg,
+#fff7fa,
+#ffeaf3,
+#fff7fa
+);
+margin:0;
+padding:0;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:
+0 15px 40px rgba(0,0,0,0.12);
+text-align:center;
+}
+
+.logo{
+width:180px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+h1{
+color:#d85c8f;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-top:10px;
+margin-bottom:15px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+button{
+
+background:
+linear-gradient(
+135deg,
+#d85c8f,
+#ff8fb5
+);
+
+color:white;
+border:none;
+padding:15px 30px;
+font-size:18px;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+.footer{
+margin-top:20px;
+color:gray;
+font-size:14px;
+}
+
+.optionBox{
+
+background:#fff3f7;
+padding:12px;
+
+border-radius:12px;
+
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Geschenkgutschein</h1>
+
+<div style="
+background:linear-gradient(
+135deg,
+#fff7d1,
+#ffe79e
+);
+padding:15px;
+border-radius:15px;
+margin-bottom:20px;
+">
+
+⭐ Premium Geschenkgutschein
+
+<br>
+
+Perfekt für Geburtstag,
+Hochzeit,
+Verlobung,
+Muttertag
+oder besondere Anlässe.
+
+</div>
+
+
+<h2 style="
+color:#d85c8f;
+margin-top:-10px;
+">
+Make-up Artist by Asma
+</h2>
+
+<p>Geschenkgutschein online bestellen</p>
+
+<div style="
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:15px;
+margin-bottom:15px;
+">
+
+<div class="optionBox">
+⭐ 50€
+</div>
+
+<div class="optionBox">
+🔥 100€
+</div>
+
+<div class="optionBox">
+👑 150€
+</div>
+
+</div>
+
+<p
+style="
+color:#666;
+line-height:1.6;
+"
+>
+
+Verschenke Schönheit,
+Make-up,
+Hairstyling oder eine
+Proteinbehandlung.
+
+Der Gutschein wird
+persönlich erstellt
+und mit individueller
+Gutscheinnummer ausgegeben.
+
+</p>
+
+<div style="
+background:#fff3f7;
+padding:15px;
+border-radius:15px;
+margin-bottom:20px;
+">
+
+<b>Gutschein-Nr.:</b>
+
+<span id="gutscheinNr">
+Wird erstellt...
+</span>
+
+</div>
+
+<h3>Deine Daten</h3>
+
+<input
+type="text"
+placeholder="Dein Name"
+id="customerName"
+>
+
+<input
+type="text"
+placeholder="Name des Empfängers"
+id="receiverName"
+>
+
+<textarea
+placeholder="Persönliche Nachricht für den Gutschein"
+style="
+width:100%;
+height:100px;
+padding:12px;
+border-radius:10px;
+border:1px solid #ddd;
+margin-bottom:15px;
+">
+</textarea>
+
+
+<select id="amount">
+<option>25 €</option>
+<option>50 €</option>
+<option>75 €</option>
+<option>100 €</option>
+<option>150 €</option>
+<option>200 €</option>
+</select>
+
+<select id="service">
+<option>Make-up</option>
+<option>Hairstyling / Frisuren</option>
+<option>Proteinbehandlung / Haarglättung</option>
+<option>Freie Wahl</option>
+</select>
+
+<div
+style="
+background:#fff3f7;
+padding:15px;
+border-radius:15px;
+margin-top:15px;
+margin-bottom:15px;
+text-align:left;
+"
+>
+
+<b>Gutschein Informationen</b>
+
+<ul>
+
+<li>✔ Persönlicher Gutschein-Code</li>
+
+<li>✔ Per E-Mail oder Post erhältlich</li>
+
+<li>✔ Für alle Dienstleistungen einlösbar</li>
+
+<li>✔ 1 Jahre gültig</li>
+
+<li>✔ Sicher und individuell erstellt</li>
+
+</ul>
+
+</div>
+
+<input
+type="email"
+placeholder="E-Mail Adresse"
+id="email"
+>
+
+
+<input
+type="tel"
+placeholder="Telefonnummer"
+id="phone"
+>
+
+<h3>Versandart</h3>
+
+<select
+id="delivery"
+onchange="checkVersand(this.value)"
+>
+
+<option>Per E-Mail</option>
+
+<option>Per Post</option>
+
+</select>
+
+<div id="adresseBox" style="display:none;">
+
+<input
+type="text"
+placeholder="Straße und Hausnummer"
+>
+
+<input
+type="text"
+placeholder="PLZ und Ort"
+>
+
+</div>
+
+<h3>Zahlungsmöglichkeiten</h3>
+
+<p>
+
+💳 PayPal
+
+<br>
+
+🏦 Banküberweisung
+
+<br>
+
+💵 Barzahlung bei Abholung
+
+</p>
+
+<div
+id="preview"
+style="
+background:#fff8fb;
+padding:20px;
+border-radius:20px;
+margin-top:20px;
+margin-bottom:20px;
+text-align:left;
+"
+>
+
+<h3>🎁 Gutschein Vorschau</h3>
+
+<p id="previewName">
+Empfänger: -
+</p>
+
+<p id="previewAmount">
+Wert: -
+</p>
+
+<p id="previewService">
+Leistung: -
+</p>
+
+</div>
+
+<div style="
+background:#f6fffa;
+padding:15px;
+border-radius:15px;
+margin-bottom:20px;
+text-align:left;
+">
+
+<h3>🎁 Dein Vorteil</h3>
+
+✔ Persönlicher Gutschein
+
+<br>
+
+✔ Individuelle Nummer
+
+<br>
+
+✔ Ideal als Geschenk
+
+<br>
+
+✔ Digital oder per Post
+
+<br>
+
+✔ Für alle Dienstleistungen nutzbar
+
+</div>
+
+<button onclick="sendVoucher()">
+Jetzt Gutschein bestellen
+</button>
+
+<div style="
+background:#f8fff8;
+padding:15px;
+border-radius:15px;
+margin-top:20px;
+">
+
+<h3>Warum bei uns kaufen?</h3>
+
+<p>
+✅ Persönlicher Gutschein
+
+<br>
+
+✅ Individuelle Gutscheinnummer
+
+<br>
+
+✅ 1 Jahre gültig
+
+<br>
+
+✅ Direkt von Make-up Artist by Asma
+
+<br>
+
+✅ Keine versteckten Kosten
+
+</p>
+
+</div>
+
+<hr
+style="
+margin-top:30px;
+border:none;
+height:1px;
+background:#eee;
+"
+>
+
+<div class="footer">
+
+<p>
+Folge uns auf Instagram
+
+<br><br>
+
+<b>@MAKEUPARTISTBYASMA</b>
+</p>
+
+<br>
+
+<a
+href="https://instagram.com/makeupartistbyasma"
+target="_blank"
+>
+
+<button
+style="
+background:#E1306C;
+width:220px;
+"
+>
+<div style="
+background:#fff8d6;
+padding:15px;
+border-radius:15px;
+margin-top:20px;
+">
+
+🔒 Sichere Bestellung
+
+<br><br>
+
+Alle Gutscheine werden
+persönlich geprüft und
+manuell erstellt.
+
+Jede Gutscheinnummer
+ist nur einmal gültig.
+
+</div>
+
+
+📷 Instagram öffnen
+
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+<div
+id="loading"
+style="
+display:none;
+margin-top:20px;
+"
+>
+
+⏳ Anfrage wird gesendet...
+
+</div>
+
+<div
+id="success"
+style="
+display:none;
+margin-top:20px;
+background:#e8fff0;
+padding:20px;
+border-radius:15px;
+"
+>
+
+<h2>✅ Anfrage erfolgreich gesendet</h2>
+
+<p>
+Vielen Dank.
+
+Make-up Artist by Asma
+meldet sich schnellstmöglich.
+</p>
+
+</div>
+<script>
+
+function generateCode(){
+
+return "ASMA-" +
+Math.floor(
+100000 + Math.random()*900000
+);
+
+}
+
+function sendVoucher(){
+
+let code = generateCode();
+
+document.getElementById(
+"loading"
+).style.display="block";
+
+let customer =
+document.getElementById("customerName").value;
+
+let receiver =
+document.getElementById("receiverName").value;
+
+let amount =
+document.getElementById("amount").value;
+
+let service =
+document.getElementById("service").value;
+
+let email =
+document.getElementById("email").value;
+
+let phone =
+document.getElementById(
+"phone"
+).value;
+
+if(
+customer == "" ||
+receiver == "" ||
+email == "" ||
+phone == ""
+){
+alert("Bitte alle Felder ausfüllen");
+return;
+
+}
+
+document.getElementById(
+"loading"
+).style.display="none";
+
+document.getElementById(
+"success"
+).style.display="block";
+
+alert(
+
+"Neue Gutscheinanfrage\n\n" +
+
+"Gutscheincode:\n" +
+
+code
+
+);
+
+}
+</script>
+
+<script>
+
+let nummer =
+"ASMA-" +
+Math.floor(
+100000 + Math.random()*900000
+);
+
+document.getElementById(
+"gutscheinNr"
+).innerHTML = nummer;
+
+</script>
+
+<script>
+
+setInterval(()=>{
+
+let name =
+document.getElementById(
+"receiverName"
+).value;
+
+let amount =
+document.getElementById(
+"amount"
+).value;
+
+let service =
+document.getElementById(
+"service"
+).value;
+
+document.getElementById(
+"previewName"
+).innerHTML =
+"Empfänger: " + name;
+
+document.getElementById(
+"previewAmount"
+).innerHTML =
+"Wert: " + amount;
+
+document.getElementById(
+"previewService"
+).innerHTML =
+"Leistung: " + service;
+
+},500);
+
+function checkVersand(value){
+
+if(value=="Per Post"){
+
+document.getElementById(
+"adresseBox"
+).style.display="block";
+
+}else{
+
+document.getElementById(
+"adresseBox"
+).style.display="none";
+
+}
+
+}
+
+</script>
+
+<div style="
+text-align:center;
+padding:20px;
+color:#888;
+font-size:13px;
+">
+
+© 2026 Make-up Artist by Asma
+
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB6mwaWilCSTxT22phpLF0F6hZrJHOnnsE",
+  authDomain: "asma-gutschein.firebaseapp.com",
+  projectId: "asma-gutschein",
+  storageBucket: "asma-gutschein.firebasestorage.app",
+  messagingSenderId: "104110369931",
+  appId: "1:104110369931:web:d279417ad41a73301cb88e"
+};
+
+const app = initializeApp(firebaseConfig);
+
+console.log("Firebase verbunden");
+
+</script>
+
+</body>
+</html>
